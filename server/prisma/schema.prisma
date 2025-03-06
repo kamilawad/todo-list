@@ -28,6 +28,8 @@ model User {
   email     String  @unique
   password  String
   todos     Todo[]
+
+  @@map("users")
 }
 
 model Todo {
@@ -41,4 +43,6 @@ model Todo {
   completed  Boolean @default(false)
   userId     Int
   user       User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("todos")
 }
