@@ -38,7 +38,7 @@ model Todo {
   updatedAt DateTime @updatedAt
 
   description String
-  priority   Priority
+  priority   Priority @default(Priority.LOW)
   date       DateTime
   completed  Boolean @default(false)
   userId     Int
